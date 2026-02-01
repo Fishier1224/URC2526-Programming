@@ -1,2 +1,17 @@
 .DS_Store
 ComputerCode/computer_venv
+nano_test_env/
+deps/
+lidar_venv/
+yolovenv/
+install_pycuda.sh
+deps/
+libcusparse_lt-linux-aarch64-0.7.1.0-archive/
+Test/
+libcusparse_lt-linux-aarch64-0.7.1.0-archive.tar.xz
+deepstream-7.1_7.1.0-1_arm64.deb
+teleop_env/
+JetsonNanoCode/ObjectDetection/output_videos/
+JetsonNanoCode/ObjectDetection/input_videos/
+JetsonNanoCode/ObjectDetection/configs/models/
+JetsonNanoCode/ObjectDetection/testImages/
