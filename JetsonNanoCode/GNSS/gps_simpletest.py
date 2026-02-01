@@ -19,7 +19,7 @@ import adafruit_gps
 #tx = board.TX  # Use board.GP4 or other UART TX on Raspberry Pi Pico boards.
 #rx = board.RX  # Use board.GP5 or other UART RX on Raspberry Pi Pico boards.
 #uart = busio.UART(tx, rx, baudrate=9600, timeout=10)
-uart = serial.Serial("/dev/ttyTHS1", baudrate=9600, timeout=1)
+uart = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=1)
 
 # for a computer, use the pyserial library for uart access
 # import serial
