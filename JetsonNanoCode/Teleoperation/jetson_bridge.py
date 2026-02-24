@@ -5,12 +5,12 @@ import serial
 import time
 import re
 
-MKR_PORT  = '/dev/ttyACM1'  # MKR WAN receiver — check with: ls /dev/ttyACM*
+MKR_PORT  = '/dev/ttyACM2'  # MKR WAN receiver — check with: ls /dev/ttyACM*
 MEGA_PORT = '/dev/ttyACM0'  # Arduino Mega
-UNO_PORT  = '/dev/ttyACM2'  # Arduino Uno
+UNO_PORT  = '/dev/ttyACM1'  # Arduino Uno
 BAUD_MKR  = 115200
 BAUD_MEGA = 115200
-BAUD_AUNO = 115200
+BAUD_UNO = 115200
 
 mkr_wan = serial.Serial(MKR_PORT, BAUD_MKR, timeout=1)
 mega    = serial.Serial(MEGA_PORT, BAUD_MEGA, timeout=1)
