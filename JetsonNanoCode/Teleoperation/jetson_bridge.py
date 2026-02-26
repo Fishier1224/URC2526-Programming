@@ -7,11 +7,14 @@ import re
 
 MKR_PORT  = '/dev/ttyACM1'  # MKR WAN receiver — check with: ls /dev/ttyACM*
 MEGA_PORT = '/dev/ttyACM0'  # Arduino Mega
+UNO_PORT  = '/dev/ttyACM2'  # Arduino Uno
 BAUD_MKR  = 115200
 BAUD_MEGA = 115200
+BAUD_AUNO = 115200
 
 mkr_wan = serial.Serial(MKR_PORT, BAUD_MKR, timeout=1)
 mega    = serial.Serial(MEGA_PORT, BAUD_MEGA, timeout=1)
+uno     = serial.Serial(UNO_PORT, BAUD_UNO, timeout=1)
 
 time.sleep(2)
 print("Bridge active. Waiting for LoRa controller data...")
@@ -44,6 +47,7 @@ try:
 
             parse_and_print(packet)
             mega.write((packet + '\n').encode('utf-8'))
+            uno.write((packet + '\n').encode('utf-8'))
 
         time.sleep(0.01)
 
