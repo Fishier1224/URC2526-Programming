@@ -5,7 +5,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description="Xbox controller to Arduino serial bridge")
 parser.add_argument("--port", type=str, required=True, help="Arduino COM port, e.g., COM4 or /dev/ttyUSB0")
-parser.add_argument("--baud", type=int, default=9600, help="Serial baud rate (default 115200)")
+parser.add_argument("--baud", type=int, default=115200, help="Serial baud rate (default 115200)")
 args = parser.parse_args()
 
 pygame.init()

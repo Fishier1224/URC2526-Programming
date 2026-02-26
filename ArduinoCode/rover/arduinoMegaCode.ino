@@ -1,157 +1,87 @@
-#include <SoftwareSerial.h>
+#include <Servo.h>
 
-// --- Pin Definitions ---
-#define rxPin1 16   // SMC1 TX -> Mega pin 16 (base actuator)
-#define txPin1 17   // SMC1 RX -> Mega pin 17
-#define rxPin2 18   // SMC2 TX -> Mega pin 18 (shoulder actuator)
-#define txPin2 19   // SMC2 RX -> Mega pin 19
+Servo esc1;  // old flipsky (pin 10)
+Servo esc2;  // dual flipsky (pin 9)
 
-#define SPEED      2000
-#define STOP_SPEED 0
+const int escPin1 = 10;
+const int escPin2 = 9;
 
-SoftwareSerial smc1(rxPin1, txPin1);
-SoftwareSerial smc2(rxPin2, txPin2);
+const int min1 = 1160; // 1160
+const int neutral1 = 1500; // 1500
+const int max1 = 1840; // 1840
 
-// --- SMC Helpers ---
-void exitSafeStart(SoftwareSerial &smc) {
-  smc.write(0x83);
-}
+const int max2 = 1079; // 1079
+const int neutral2 = 1280; // 1280
+const int min2 = 1535; // 1535
 
-void setMotorSpeed(SoftwareSerial &smc, int speed) {
-  if (speed < 0) {
-    smc.write(0x86);  // reverse
-    speed = -speed;
-  } else {
-    smc.write(0x85);  // forward (also used for stop at speed=0)
-  }
-  smc.write(speed & 0x1F);
-  smc.write((speed >> 5) & 0x7F);
-}
+int currentPWM1 = neutral1;
+int currentPWM2 = neutral2;
 
-// --- Packet Parsing ---
-// Packet format: <lx,ly,rx,ry,a,b,x,y,dpx,dpy,lb,rb,lt,rt>\n
-// Index:           0  1  2  3  4 5 6 7  8   9  10  11 12  13
+String inputBuffer = "";
 
-struct ControllerState {
-  float lx, ly, rx, ry;
-  int   a, b, x, y;
-  int   dpx, dpy;
-  int   lb, rb, lt, rt;
-};
-
-String packetBuf = "";
-bool   inPacket  = false;
-
-bool parsePacket(const String &raw, ControllerState &state) {
-  // raw is the content between < and >, e.g. "-0.01,0.95,..."
-  float vals[4];
-  int   ivals[10];
-  
-  int idx = 0;
-  int last = 0;
-  String fields[14];
-  int fieldCount = 0;
-
-  for (int i = 0; i <= (int)raw.length(); i++) {
-    if (i == (int)raw.length() || raw[i] == ',') {
-      if (fieldCount >= 14) return false;
-      fields[fieldCount++] = raw.substring(last, i);
-      last = i + 1;
-    }
-  }
-
-  if (fieldCount != 14) return false;
-
-  state.lx  = fields[0].toFloat();
-  state.ly  = fields[1].toFloat();
-  state.rx  = fields[2].toFloat();
-  state.ry  = fields[3].toFloat();
-  state.a   = fields[4].toInt();
-  state.b   = fields[5].toInt();
-  state.x   = fields[6].toInt();
-  state.y   = fields[7].toInt();
-  state.dpx = fields[8].toInt();
-  state.dpy = fields[9].toInt();
-  state.lb  = fields[10].toInt();
-  state.rb  = fields[11].toInt();
-  state.lt  = fields[12].toInt();
-  state.rt  = fields[13].toInt();
-
-  return true;
-}
-
-// --- Control Logic ---
-void applyControl(const ControllerState &s) {
-  // --- Actuator 1: BASE (LB = extend, LT = retract) ---
-  if (s.lb && !s.lt) {
-    setMotorSpeed(smc1, SPEED);
-    Serial.println("ACT1: Extending");
-  } else if (s.lt && !s.lb) {
-    setMotorSpeed(smc1, -SPEED);
-    Serial.println("ACT1: Retracting");
-  } else {
-    setMotorSpeed(smc1, STOP_SPEED);
-  }
-
-  // --- Actuator 2: SHOULDER (RB = extend, RT = retract) ---
-  if (s.rb && !s.rt) {
-    setMotorSpeed(smc2, SPEED);
-    Serial.println("ACT2: Extending");
-  } else if (s.rt && !s.rb) {
-    setMotorSpeed(smc2, -SPEED);
-    Serial.println("ACT2: Retracting");
-  } else {
-    setMotorSpeed(smc2, STOP_SPEED);
-  }
-
-  // TODO: drive motors  -> use lx, ly, rx, ry, dpx, dpy
-  // TODO: claw          -> use a (close), b (open)
-  // TODO: other         -> use x, y
-}
-
-// --- Setup ---
 void setup() {
-  smc1.begin(19200);
-  smc2.begin(19200);
-  Serial.begin(115200);  // Match Jetson bridge baud rate
+  Serial.begin(115200);
 
-  delay(10);
+  esc1.attach(escPin1);
+  esc2.attach(escPin2, min2, max2);
 
-  // Init both SMCs
-  smc1.write(0xAA);
-  smc2.write(0xAA);
-  exitSafeStart(smc1);
-  exitSafeStart(smc2);
+  //Serial.println("Arming ESCs...");
+  esc1.writeMicroseconds(neutral1);
+  esc2.writeMicroseconds(neutral2);
+  delay(2000);
 
-  Serial.println("Rover Mega Ready. Waiting for controller packets...");
+  esc1.writeMicroseconds(neutral1);
+  esc2.writeMicroseconds(neutral2);
+  delay(3000);
+
+  //Serial.println("ESCs armed! Awaiting joystick input.");
 }
 
-// --- Loop ---
+// Map float -1.0 to 1.0 → PWM range, with neutral at 0
+int mapAxis(float val, int minPWM, int neutralPWM, int maxPWM) {
+  if (val >= 0.0) {
+    return (int)(neutralPWM + val * (maxPWM - neutralPWM));
+  } else {
+    return (int)(neutralPWM + val * (neutralPWM - minPWM));
+  }
+}
+
+void parseAndDrive(String msg) {
+  msg.trim();
+  if (msg.startsWith("<") && msg.endsWith(">")) {
+    msg = msg.substring(1, msg.length() - 1);
+
+    // parse all 14 fields: lx,ly,rx,ry,a,b,x,y,dpx,dpy,lb,rb,lt,rt
+    float fields[4];
+    String tmp = msg;
+    for (int i = 0; i < 4; i++) {
+      int comma = tmp.indexOf(',');
+      if (comma == -1) return;
+      fields[i] = tmp.substring(0, comma).toFloat();
+      tmp = tmp.substring(comma + 1);
+    }
+    // skip the remaining 10 integer fields for now
+    float lx = fields[0];
+    float ly = fields[1];
+
+    float left  = constrain(ly + lx, -1.0, 1.0);
+    float right = constrain(ly - lx, -1.0, 1.0);
+
+    currentPWM1 = mapAxis(left,  min1, neutral1, max1);
+    currentPWM2 = mapAxis(right, min2, neutral2, max2);
+  }
+}
+
 void loop() {
+  esc1.writeMicroseconds(currentPWM1);
+  esc2.writeMicroseconds(currentPWM2);
+
   while (Serial.available()) {
     char c = Serial.read();
-
-    if (c == '<') {
-      packetBuf = "";
-      inPacket  = true;
-    } else if (c == '>' && inPacket) {
-      inPacket = false;
-      ControllerState state;
-      if (parsePacket(packetBuf, state)) {
-        applyControl(state);
-      } else {
-        Serial.print("Bad packet: ");
-        Serial.println(packetBuf);
-      }
-      packetBuf = "";
-    } else if (inPacket) {
-      if (packetBuf.length() < 80) {  // guard against runaway buffer
-        packetBuf += c;
-      } else {
-        // Overflow — discard
-        inPacket  = false;
-        packetBuf = "";
-      }
+    inputBuffer += c;
+    if (c == '\n') {
+      parseAndDrive(inputBuffer);
+      inputBuffer = "";
     }
   }
 }
