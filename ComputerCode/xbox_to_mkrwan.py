@@ -34,14 +34,14 @@ def main():
     while True:
         pygame.event.pump()
 
-        lx = js.get_axis(0) # 
-        ly = -1 * js.get_axis(1) # 
+        lx = js.get_axis(0) # allocate drive (fast)
+        ly = -1 * js.get_axis(1) # allocate drive (fast)
 
-        rx = js.get_axis(2) # allocate drive
-        ry = -1 * js.get_axis(3) # alloctae drive
+        rx = js.get_axis(2) # allocate drive (slow, ideally)
+        ry = -1 * js.get_axis(3) # alloctae drive (slow, ideally)
 
-        a  = js.get_button(0) # claw end effector close
-        b  = js.get_button(1) # claw end effector open ?? idek anymore
+        a  = js.get_button(0) # claw end effector close 
+        b  = js.get_button(1) # claw end effector open 
         x  = js.get_button(2) # 
         y  = js.get_button(3) # 
 
@@ -50,7 +50,7 @@ def main():
         lt = int(js.get_axis(4) > 0.0)  # linear actuator base retract
         rt = int(js.get_axis(5) > 0.0) # linear actuator shoulder retract
 
-        dpx, dpy = js.get_hat(0) # allocate drive (small step)
+        dpx, dpy = js.get_hat(0) # wrist
 
         print(f"L({lx:.2f},{ly:.2f}) R({rx:.2f},{ry:.2f}) A:{a} B:{b} X:{x} Y:{y} DPX:{dpx} DPY:{dpy} LB:{lb} RB:{rb} LT:{lt} RT:{rt}")
 
