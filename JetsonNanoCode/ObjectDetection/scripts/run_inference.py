@@ -1,6 +1,14 @@
 import cv2
 import numpy as np
 import onnxruntime as ort
+import serial
+import subprocess
+import time
+import socket
+
+# -------------------- Stop teleop service --------------------
+subprocess.run(["sudo", "systemctl", "stop", "jetson_bridge.service"])
+time.sleep(1)
 
 # -------------------- Config --------------------
 MODEL_PATH      = "configs/models/best_fixed.onnx"
@@ -10,6 +18,14 @@ IOU_THRESHOLD   = 0.45
 INPUT_SIZE      = 640
 CLASSES = ["ArUcoTag", "Bottle", "BrickHammer", "OrangeHammer"]
 
+#SERIAL_PORT     = "/dev/mkr_wan"
+#SERIAL_BAUD     = 115200
+
+# UDP for now
+PC_IP = "192.168.8.8.185"
+PC_PORT = 5011
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
 # -------------------- Load Model on GPU --------------------
 session = ort.InferenceSession(
     MODEL_PATH,
@@ -17,6 +33,11 @@ session = ort.InferenceSession(
 )
 input_name = session.get_inputs()[0].name
 print("Running on:", session.get_providers()[0])
+
+# -------------------- Open Serial --------------------
+#ser = serial.Serial(SERIAL_PORT, SERIAL_BAUD, timeout=1)
+#time.sleep(2)
+#print(f"Serial open on {SERIAL_PORT}")
 
 # -------------------- Open Camera --------------------
 cap = cv2.VideoCapture(CAMERA_INDEX, cv2.CAP_V4L2)
@@ -28,11 +49,11 @@ def preprocess(frame):
     img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     img = cv2.resize(img, (INPUT_SIZE, INPUT_SIZE))
     img = img.astype(np.float32) / 255.0
-    img = np.transpose(img, (2, 0, 1))[None]  # -> [1, 3, H, W]
+    img = np.transpose(img, (2, 0, 1))[None]
     return np.ascontiguousarray(img)
 
 def postprocess(output, orig_h, orig_w):
-    preds = output[0].T  # [8400, 4+num_classes]
+    preds = output[0].T
     boxes, scores = preds[:, :4], preds[:, 4:]
     class_ids   = np.argmax(scores, axis=1)
     confs       = scores[np.arange(len(scores)), class_ids]
@@ -53,6 +74,11 @@ def postprocess(output, orig_h, orig_w):
     idxs = idxs.flatten() if len(idxs) else []
     return xyxy[idxs], confs[idxs], class_ids[idxs]
 
+def send_detection(label):
+    msg = f"<{label}>\n"
+    #ser.write(msg.encode())
+    sock.sendto(msg.encode(), (PC_IP, PC_PORT))
+
 # -------------------- Inference Loop --------------------
 frame_count = 0
 try:
@@ -67,8 +93,9 @@ try:
 
         for box, conf, cls_id in zip(boxes, confs, class_ids):
             x1, y1, x2, y2 = map(int, box)
-            label = f"{CLASSES[cls_id]} {conf:.2f}"
+            label = f"{CLASSES[cls_id]}:{conf:.2f}"
             print(f"Frame {frame_count} - {label}")
+            send_detection(label)
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
             cv2.putText(frame, label, (x1, y1 - 6),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
@@ -79,4 +106,7 @@ except KeyboardInterrupt:
     print("Stopped by user")
 finally:
     cap.release()
+    #ser.close()
+    sock.close()
+    subprocess.run(["sudo", "systemctl", "start", "jetson_bridge.service"])
     print("Inference complete. Done.")

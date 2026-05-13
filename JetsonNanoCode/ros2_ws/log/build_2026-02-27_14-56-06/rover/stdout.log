@@ -1,0 +1,57 @@
+running egg_info
+creating ../../build/rover/rover.egg-info
+writing ../../build/rover/rover.egg-info/PKG-INFO
+writing dependency_links to ../../build/rover/rover.egg-info/dependency_links.txt
+writing entry points to ../../build/rover/rover.egg-info/entry_points.txt
+writing requirements to ../../build/rover/rover.egg-info/requires.txt
+writing top-level names to ../../build/rover/rover.egg-info/top_level.txt
+writing manifest file '../../build/rover/rover.egg-info/SOURCES.txt'
+reading manifest file '../../build/rover/rover.egg-info/SOURCES.txt'
+writing manifest file '../../build/rover/rover.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build
+creating /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib
+creating /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib/rover
+copying rover/gps_node.py -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib/rover
+copying rover/mission_node.py -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib/rover
+copying rover/__init__.py -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib/rover
+copying rover/serial_bridge_node.py -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib/rover
+copying rover/wheel_odom_node.py -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib/rover
+copying rover/joystick_node.py -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib/rover
+running install
+running install_lib
+creating /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover
+copying /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib/rover/gps_node.py -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover
+copying /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib/rover/mission_node.py -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover
+copying /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib/rover/__init__.py -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover
+copying /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib/rover/serial_bridge_node.py -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover
+copying /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib/rover/wheel_odom_node.py -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover
+copying /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/build/lib/rover/joystick_node.py -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover
+byte-compiling /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover/gps_node.py to gps_node.cpython-310.pyc
+byte-compiling /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover/mission_node.py to mission_node.cpython-310.pyc
+byte-compiling /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover/serial_bridge_node.py to serial_bridge_node.cpython-310.pyc
+byte-compiling /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover/wheel_odom_node.py to wheel_odom_node.cpython-310.pyc
+byte-compiling /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover/joystick_node.py to joystick_node.cpython-310.pyc
+running install_data
+creating /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/share/ament_index
+creating /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/share/ament_index/resource_index
+creating /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/share/ament_index/resource_index/packages
+copying resource/rover -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/share/ament_index/resource_index/packages
+copying package.xml -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/share/rover
+creating /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/share/rover/launch
+copying launch/rover.launch.py -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/share/rover/launch
+creating /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/share/rover/config
+copying config/nav2_params.yaml -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/share/rover/config
+copying config/point_lio_l2.yaml -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/share/rover/config
+copying config/ekf.yaml -> /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/share/rover/config
+running install_egg_info
+Copying ../../build/rover/rover.egg-info to /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/lib/python3.10/site-packages/rover-0.0.1-py3.10.egg-info
+running install_scripts
+Installing gps_node script to /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/bin
+Installing joystick_node script to /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/bin
+Installing mission_node script to /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/bin
+Installing serial_bridge_node script to /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/bin
+Installing wheel_odom_node script to /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/rover/bin
+writing list of installed files to '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/rover/install.log'

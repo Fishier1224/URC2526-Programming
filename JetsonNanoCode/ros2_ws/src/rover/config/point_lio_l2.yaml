@@ -1,0 +1,54 @@
+common:
+    lid_topic:  "unilidar/cloud"     # PointCloud2 from Unitree L2 SDK
+    imu_topic:  "unilidar/imu"       # IMU from Unitree L2 SDK
+    time_sync_en: false
+
+preprocess:
+    lidar_type: 6                    # 6 = UNILIDAR_L2 (verify against point_lio source)
+    scan_line: 18                    # L2 has 18 scan lines
+    timestamp_unit: 3                # 3 = microseconds (L2 default)
+    blind: 0.5                       # ignore returns closer than 0.5m (rover body)
+
+mapping:
+    acc_norm: 9.81                   # m/s² — standard gravity
+
+    # ── IMU saturation limits (Unitree L2 onboard IMU) ──────
+    satu_acc: 78.4                   # 8g in m/s²  (8 * 9.81)
+    satu_gyro: 34.9                  # 2000 deg/s in rad/s
+
+    # !! TUNE if odometry drifts or is noisy in the field !!
+    gyr_cov: 0.1
+    acc_cov: 0.1
+    b_gyr_cov: 0.0001
+    b_acc_cov: 0.0001
+
+    # ── Extrinsics: LiDAR → IMU (from Unitree L2 SDK docs) ──
+    # IMU origin in LiDAR frame: [-0.007698, -0.014655, 0.00667] metres
+    extrinsic_est_en: false          # extrinsic is known
+    extrinsic_T: [-0.007698, -0.014655, 0.00667]
+    extrinsic_R: [1, 0, 0,
+                  0, 1, 0,
+                  0, 0, 1]
+
+    # ── Timing ───────────────────────────────────────────────
+    imu_time_inte: 0.004             # L2 IMU at 250 Hz → 1/250
+
+    time_lag_imu_to_lidar: 0.0      # tune if timestamps are misaligned
+
+    # ── Point cloud filtering ─────────────────────────────────
+    filter_size_surf: 0.5            # voxel size — increase to 0.8 if CPU-bound
+    filter_size_map: 0.5
+
+    # ── Odometry output ──────────────────────────────────────
+    publish_odometry_without_downsample: false
+
+    cube_side_length: 1000           # large map cube for open desert
+
+    gravity_init: [0, 0, -9.81]
+    start_in_aggressive_motion: false
+
+publish:
+    path_en: false                   # headless — disable path publishing
+    scan_publish_en: false           # save CPU — disable scan republish
+    scan_bodyframe_pub_en: false
+    effect_point_pub: false

@@ -5,9 +5,9 @@ import serial
 import time
 import re
 
-MKR_PORT  = '/dev/ttyACM2'  # MKR WAN receiver — check with: ls /dev/ttyACM*
-MEGA_PORT = '/dev/ttyACM0'  # Arduino Mega
-UNO_PORT  = '/dev/ttyACM1'  # Arduino Uno
+MKR_PORT  = '/dev/mkr_wan'  # MKR WAN receiver — check with: ls /dev/ttyACM*
+MEGA_PORT = '/dev/mega'  # Arduino Mega
+UNO_PORT  = '/dev/uno'  # Arduino Uno
 BAUD_MKR  = 115200
 BAUD_MEGA = 115200
 BAUD_UNO = 115200
@@ -55,3 +55,4 @@ except KeyboardInterrupt:
     print("\nShutting down.")
     mkr_wan.close()
     mega.close()
+    uno.close()

@@ -1,0 +1,81 @@
+[0.038s] Invoking command in '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/src/calypso_rover -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover
+[0.882s] -- The C compiler identification is GNU 11.4.0
+[1.350s] -- The CXX compiler identification is GNU 11.4.0
+[1.397s] -- Detecting C compiler ABI info
+[1.599s] -- Detecting C compiler ABI info - done
+[1.625s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.633s] -- Detecting C compile features
+[1.636s] -- Detecting C compile features - done
+[1.651s] -- Detecting CXX compiler ABI info
+[1.870s] -- Detecting CXX compiler ABI info - done
+[1.897s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.898s] -- Detecting CXX compile features
+[1.900s] -- Detecting CXX compile features - done
+[1.933s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.358s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.572s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[2.728s] -- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)
+[2.900s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.916s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.948s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.992s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.045s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.179s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[3.188s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[3.447s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[3.548s] -- Found FastRTPS: /opt/ros/humble/include  
+[3.654s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.691s] -- Looking for pthread.h
+[3.900s] -- Looking for pthread.h - found
+[3.901s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[4.092s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[4.096s] -- Found Threads: TRUE  
+[4.390s] -- Found nav2_bringup: 1.1.20 (/opt/ros/humble/share/nav2_bringup/cmake)
+[4.397s] -- Found robot_localization: 3.5.4 (/opt/ros/humble/share/robot_localization/cmake)
+[4.673s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[4.912s] -- Added test 'lint_cmake' to check CMake code style
+[4.915s] -- Added test 'xmllint' to check XML markup files
+[4.923s] -- Configuring done
+[4.948s] -- Generating done
+[4.954s] -- Build files have been written to: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover
+[4.993s] Invoked command in '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/src/calypso_rover -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover
+[4.999s] Invoking command in '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover -- -j6 -l6
+[5.068s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[5.371s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[5.402s] -- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)
+[5.479s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[5.484s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[5.496s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[5.516s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.542s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.608s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[5.634s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[5.826s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[6.530s] -- Found nav2_bringup: 1.1.20 (/opt/ros/humble/share/nav2_bringup/cmake)
+[6.621s] -- Found robot_localization: 3.5.4 (/opt/ros/humble/share/robot_localization/cmake)
+[6.769s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[6.945s] -- Added test 'lint_cmake' to check CMake code style
+[6.947s] -- Added test 'xmllint' to check XML markup files
+[6.949s] -- Configuring done
+[6.963s] -- Generating done
+[6.969s] -- Build files have been written to: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover
+[7.058s] Invoked command in '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover -- -j6 -l6
+[7.089s] Invoking command in '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover
+[7.112s] -- Install configuration: ""
+[7.113s] -- Execute custom install script
+[7.114s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/ament_index/resource_index/package_run_dependencies/calypso_rover
+[7.138s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/ament_index/resource_index/parent_prefix_path/calypso_rover
+[7.165s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/environment/ament_prefix_path.sh
+[7.190s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/environment/ament_prefix_path.dsv
+[7.216s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/environment/path.sh
+[7.243s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/environment/path.dsv
+[7.268s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/local_setup.bash
+[7.295s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/local_setup.sh
+[7.323s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/local_setup.zsh
+[7.350s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/local_setup.dsv
+[7.381s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/package.dsv
+[7.406s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/ament_index/resource_index/packages/calypso_rover
+[7.432s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/cmake/calypso_roverConfig.cmake
+[7.456s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/cmake/calypso_roverConfig-version.cmake
+[7.479s] -- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/package.xml
+[7.506s] Invoked command in '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover

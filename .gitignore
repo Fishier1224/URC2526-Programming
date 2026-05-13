@@ -15,3 +15,6 @@ JetsonNanoCode/ObjectDetection/output_videos/
 JetsonNanoCode/ObjectDetection/input_videos/
 JetsonNanoCode/ObjectDetection/configs/models/
 JetsonNanoCode/ObjectDetection/testImages/
+JetsonNanoCode/rover_full.zip
+JetsonNanoCode/ros2_ws/src/catkin_point_lio_unilidar/
+JetsonNanoCode/ros2_ws/src/unilidar_sdk2/

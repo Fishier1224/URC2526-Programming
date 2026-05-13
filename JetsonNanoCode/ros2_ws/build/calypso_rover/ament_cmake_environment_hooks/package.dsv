@@ -1,0 +1,4 @@
+source;share/calypso_rover/local_setup.bash
+source;share/calypso_rover/local_setup.dsv
+source;share/calypso_rover/local_setup.sh
+source;share/calypso_rover/local_setup.zsh

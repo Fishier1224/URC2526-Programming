@@ -1,0 +1,165 @@
+[0.000000] (-) TimerEvent: {}
+[0.000979] (calypso_rover) JobQueued: {'identifier': 'calypso_rover', 'dependencies': OrderedDict()}
+[0.001683] (calypso_rover) JobStarted: {'identifier': 'calypso_rover'}
+[0.036725] (calypso_rover) JobProgress: {'identifier': 'calypso_rover', 'progress': 'cmake'}
+[0.037953] (calypso_rover) Command: {'cmd': ['/usr/bin/cmake', '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/src/calypso_rover', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover'], 'cwd': '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'urcucla'), ('SSH_CLIENT', '192.168.55.100 51734 22'), ('SSH_AGENT_PID', '4134'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib::/opt/nvidia/deepstream/deepstream-7.1/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/urcucla'), ('OLDPWD', '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/src'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'urcucla'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/urcucla/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/nvidia/deepstream/deepstream-7.1/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/tmp/ssh-XXXXXX5mt1dC/agent.4133'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('GST_PLUGIN_PATH', ':/opt/nvidia/deepstream/deepstream-7.1/lib/gst-plugins'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.55.100 51734 192.168.55.1 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.099048] (-) TimerEvent: {}
+[0.200305] (-) TimerEvent: {}
+[0.301719] (-) TimerEvent: {}
+[0.403008] (-) TimerEvent: {}
+[0.503808] (-) TimerEvent: {}
+[0.604522] (-) TimerEvent: {}
+[0.705399] (-) TimerEvent: {}
+[0.806249] (-) TimerEvent: {}
+[0.883776] (calypso_rover) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.906461] (-) TimerEvent: {}
+[1.007714] (-) TimerEvent: {}
+[1.108432] (-) TimerEvent: {}
+[1.209340] (-) TimerEvent: {}
+[1.310539] (-) TimerEvent: {}
+[1.351184] (calypso_rover) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[1.398074] (calypso_rover) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[1.410629] (-) TimerEvent: {}
+[1.511784] (-) TimerEvent: {}
+[1.599780] (calypso_rover) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.611932] (-) TimerEvent: {}
+[1.626530] (calypso_rover) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.635056] (calypso_rover) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.638246] (calypso_rover) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.653180] (calypso_rover) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.712217] (-) TimerEvent: {}
+[1.813225] (-) TimerEvent: {}
+[1.871815] (calypso_rover) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.898715] (calypso_rover) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.900129] (calypso_rover) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.902002] (calypso_rover) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.913309] (-) TimerEvent: {}
+[1.934343] (calypso_rover) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[2.013521] (-) TimerEvent: {}
+[2.114360] (-) TimerEvent: {}
+[2.215322] (-) TimerEvent: {}
+[2.316380] (-) TimerEvent: {}
+[2.359593] (calypso_rover) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[2.416543] (-) TimerEvent: {}
+[2.517261] (-) TimerEvent: {}
+[2.572479] (calypso_rover) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[2.617479] (-) TimerEvent: {}
+[2.719004] (-) TimerEvent: {}
+[2.729122] (calypso_rover) StdoutLine: {'line': b'-- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[2.819164] (-) TimerEvent: {}
+[2.901946] (calypso_rover) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[2.918272] (calypso_rover) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[2.919227] (-) TimerEvent: {}
+[2.949771] (calypso_rover) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[2.994000] (calypso_rover) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[3.019362] (-) TimerEvent: {}
+[3.046777] (calypso_rover) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[3.119486] (-) TimerEvent: {}
+[3.181139] (calypso_rover) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[3.189531] (calypso_rover) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[3.219590] (-) TimerEvent: {}
+[3.320143] (-) TimerEvent: {}
+[3.421254] (-) TimerEvent: {}
+[3.447903] (calypso_rover) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[3.521450] (-) TimerEvent: {}
+[3.549847] (calypso_rover) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[3.621544] (-) TimerEvent: {}
+[3.655234] (calypso_rover) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[3.692398] (calypso_rover) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[3.721740] (-) TimerEvent: {}
+[3.822644] (-) TimerEvent: {}
+[3.901018] (calypso_rover) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[3.902494] (calypso_rover) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[3.922813] (-) TimerEvent: {}
+[4.024104] (-) TimerEvent: {}
+[4.093307] (calypso_rover) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[4.097331] (calypso_rover) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[4.124229] (-) TimerEvent: {}
+[4.225415] (-) TimerEvent: {}
+[4.326419] (-) TimerEvent: {}
+[4.391109] (calypso_rover) StdoutLine: {'line': b'-- Found nav2_bringup: 1.1.20 (/opt/ros/humble/share/nav2_bringup/cmake)\n'}
+[4.398418] (calypso_rover) StdoutLine: {'line': b'-- Found robot_localization: 3.5.4 (/opt/ros/humble/share/robot_localization/cmake)\n'}
+[4.426587] (-) TimerEvent: {}
+[4.527369] (-) TimerEvent: {}
+[4.627968] (-) TimerEvent: {}
+[4.674549] (calypso_rover) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[4.728117] (-) TimerEvent: {}
+[4.828821] (-) TimerEvent: {}
+[4.912568] (calypso_rover) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[4.917227] (calypso_rover) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[4.924330] (calypso_rover) StdoutLine: {'line': b'-- Configuring done\n'}
+[4.928878] (-) TimerEvent: {}
+[4.950151] (calypso_rover) StdoutLine: {'line': b'-- Generating done\n'}
+[4.956296] (calypso_rover) StdoutLine: {'line': b'-- Build files have been written to: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover\n'}
+[4.994331] (calypso_rover) CommandEnded: {'returncode': 0}
+[4.996409] (calypso_rover) JobProgress: {'identifier': 'calypso_rover', 'progress': 'build'}
+[4.998970] (calypso_rover) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover', '--', '-j6', '-l6'], 'cwd': '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'urcucla'), ('SSH_CLIENT', '192.168.55.100 51734 22'), ('SSH_AGENT_PID', '4134'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib::/opt/nvidia/deepstream/deepstream-7.1/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/urcucla'), ('OLDPWD', '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/src'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'urcucla'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/urcucla/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/nvidia/deepstream/deepstream-7.1/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/tmp/ssh-XXXXXX5mt1dC/agent.4133'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('GST_PLUGIN_PATH', ':/opt/nvidia/deepstream/deepstream-7.1/lib/gst-plugins'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.55.100 51734 192.168.55.1 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[5.029124] (-) TimerEvent: {}
+[5.069422] (calypso_rover) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[5.129270] (-) TimerEvent: {}
+[5.229997] (-) TimerEvent: {}
+[5.330679] (-) TimerEvent: {}
+[5.372669] (calypso_rover) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[5.403182] (calypso_rover) StdoutLine: {'line': b'-- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[5.430832] (-) TimerEvent: {}
+[5.480894] (calypso_rover) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[5.485688] (calypso_rover) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[5.498166] (calypso_rover) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[5.517983] (calypso_rover) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[5.530898] (-) TimerEvent: {}
+[5.543360] (calypso_rover) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[5.609299] (calypso_rover) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[5.612207] (calypso_rover) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[5.635649] (-) TimerEvent: {}
+[5.736326] (-) TimerEvent: {}
+[5.827611] (calypso_rover) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[5.836372] (-) TimerEvent: {}
+[5.937020] (-) TimerEvent: {}
+[6.037814] (-) TimerEvent: {}
+[6.138743] (-) TimerEvent: {}
+[6.239295] (-) TimerEvent: {}
+[6.339707] (-) TimerEvent: {}
+[6.440223] (-) TimerEvent: {}
+[6.531315] (calypso_rover) StdoutLine: {'line': b'-- Found nav2_bringup: 1.1.20 (/opt/ros/humble/share/nav2_bringup/cmake)\n'}
+[6.540306] (-) TimerEvent: {}
+[6.622837] (calypso_rover) StdoutLine: {'line': b'-- Found robot_localization: 3.5.4 (/opt/ros/humble/share/robot_localization/cmake)\n'}
+[6.640412] (-) TimerEvent: {}
+[6.740796] (-) TimerEvent: {}
+[6.770730] (calypso_rover) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[6.840965] (-) TimerEvent: {}
+[6.941688] (-) TimerEvent: {}
+[6.946369] (calypso_rover) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[6.948493] (calypso_rover) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[6.950769] (calypso_rover) StdoutLine: {'line': b'-- Configuring done\n'}
+[6.964723] (calypso_rover) StdoutLine: {'line': b'-- Generating done\n'}
+[6.970614] (calypso_rover) StdoutLine: {'line': b'-- Build files have been written to: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover\n'}
+[7.041935] (-) TimerEvent: {}
+[7.058430] (calypso_rover) CommandEnded: {'returncode': 0}
+[7.062389] (calypso_rover) JobProgress: {'identifier': 'calypso_rover', 'progress': 'install'}
+[7.088414] (calypso_rover) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover'], 'cwd': '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'urcucla'), ('SSH_CLIENT', '192.168.55.100 51734 22'), ('SSH_AGENT_PID', '4134'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib::/opt/nvidia/deepstream/deepstream-7.1/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/urcucla'), ('OLDPWD', '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/src'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'urcucla'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/urcucla/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/nvidia/deepstream/deepstream-7.1/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/tmp/ssh-XXXXXX5mt1dC/agent.4133'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('GST_PLUGIN_PATH', ':/opt/nvidia/deepstream/deepstream-7.1/lib/gst-plugins'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/build/calypso_rover'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.55.100 51734 192.168.55.1 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[7.113600] (calypso_rover) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[7.114556] (calypso_rover) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[7.115667] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/ament_index/resource_index/package_run_dependencies/calypso_rover\n'}
+[7.139461] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/ament_index/resource_index/parent_prefix_path/calypso_rover\n'}
+[7.141983] (-) TimerEvent: {}
+[7.166253] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/environment/ament_prefix_path.sh\n'}
+[7.191397] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/environment/ament_prefix_path.dsv\n'}
+[7.217432] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/environment/path.sh\n'}
+[7.242172] (-) TimerEvent: {}
+[7.244437] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/environment/path.dsv\n'}
+[7.270077] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/local_setup.bash\n'}
+[7.296788] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/local_setup.sh\n'}
+[7.324262] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/local_setup.zsh\n'}
+[7.342287] (-) TimerEvent: {}
+[7.351042] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/local_setup.dsv\n'}
+[7.382564] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/package.dsv\n'}
+[7.407411] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/ament_index/resource_index/packages/calypso_rover\n'}
+[7.433430] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/cmake/calypso_roverConfig.cmake\n'}
+[7.442540] (-) TimerEvent: {}
+[7.457799] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/cmake/calypso_roverConfig-version.cmake\n'}
+[7.480847] (calypso_rover) StdoutLine: {'line': b'-- Symlinking: /home/urcucla/Documents/URC2526-Programming/JetsonNanoCode/ros2_ws/install/calypso_rover/share/calypso_rover/package.xml\n'}
+[7.506755] (calypso_rover) CommandEnded: {'returncode': 0}
+[7.542635] (-) TimerEvent: {}
+[7.644101] (-) TimerEvent: {}
+[7.654319] (calypso_rover) JobEnded: {'identifier': 'calypso_rover', 'rc': 0}
+[7.658283] (-) EventReactorShutdown: {}

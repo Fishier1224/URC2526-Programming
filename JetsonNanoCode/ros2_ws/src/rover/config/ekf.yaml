@@ -1,0 +1,99 @@
+# ekf.yaml
+# Fuses GNSS (via navsat_transform) + Point-LIO odometry (primary)
+# + wheel odometry (secondary / fallback) into a clean pose for Nav2.
+#
+# Sensor sources:
+#   odom0   /Odometry        — Point-LIO (LiDAR-IMU, high frequency, very accurate)
+#   odom1   /wheel_odom      — VESC tachometer (useful fallback if LiDAR drops)
+#   pose0   /odometry/gps    — navsat_transform output (GPS absolute position)
+
+ekf_filter_node:
+  ros__parameters:
+    frequency: 30.0
+    sensor_timeout: 0.1
+    two_d_mode: true          # flat desert — ignore Z, roll, pitch
+    publish_tf: true
+    map_frame: map
+    odom_frame: odom
+    base_link_frame: base_link
+    world_frame: odom
+
+    # ── Point-LIO odometry (primary) ─────────────────────────
+    # High-frequency LiDAR-IMU fused odometry — fuse velocities.
+    # Point-LIO publishes to /Odometry (capital O).
+    odom0: /Odometry
+    odom0_config: [false, false, false,   # x y z        (position — let GPS handle)
+                   false, false, false,   # roll pitch yaw
+                   true,  true,  false,   # vx vy vz     (velocity — fuse)
+                   false, false, true,    # vroll vpitch vyaw
+                   false, false, false]   # ax ay az
+    odom0_differential: false
+    odom0_relative: false
+    odom0_queue_size: 10
+
+    # ── Wheel odometry (secondary / fallback) ─────────────────
+    # VESC tachometer-based dead-reckoning — fuse velocities only.
+    # High covariance on wheel_odom_node keeps it from overpowering
+    # Point-LIO but it helps when LiDAR odometry glitches on dust.
+    odom1: /wheel_odom
+    odom1_config: [false, false, false,   # x y z
+                   false, false, false,   # roll pitch yaw
+                   true,  false, false,   # vx only (differential drive)
+                   false, false, true,    # vyaw
+                   false, false, false]   # ax ay az
+    odom1_differential: false
+    odom1_relative: false
+    odom1_queue_size: 10
+
+    # ── GNSS absolute position (from navsat_transform) ────────
+    # navsat_transform converts /gps/fix → /odometry/gps in odom frame
+    pose0: /odometry/gps
+    pose0_config: [true,  true,  false,   # fuse XY from GPS
+                   false, false, false,
+                   false, false, false,
+                   false, false, false,
+                   false, false, false]
+    pose0_differential: false
+    pose0_relative: false
+    pose0_queue_size: 5
+
+    process_noise_covariance: [
+      0.05, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.05, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.06, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.03, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.03, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.06, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.025,0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.025,0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.04, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.01, 0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.01, 0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.02, 0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.01, 0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.01, 0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.015
+    ]
+
+# ── navsat_transform: converts raw GPS lat/lon → odom frame ──────
+# Requires:
+#   /gps/fix          (our gps_node)
+#   /odometry/filtered (the EKF output above — feeds back in)
+#   /imu/data         (from Point-LIO IMU or a separate IMU node)
+#
+# Note: navsat_transform needs the robot's initial heading to
+# align the UTM grid with the odom frame. It gets this from
+# /odometry/filtered (which gets it from Point-LIO IMU). Keep
+# the rover stationary for the first few seconds on power-up
+# so Point-LIO can initialise IMU bias before driving.
+navsat_transform_node:
+  ros__parameters:
+    frequency: 10.0
+    delay: 3.0                          # wait 3s for EKF to converge before using GPS
+    magnetic_declination_radians: 0.0   # look up for Utah/competition location
+    yaw_offset: 0.0                     # set if GPS antenna is not aligned with rover forward
+    zero_altitude: true
+    broadcast_utm_transform: true
+    publish_filtered_gps: true
+    use_odometry_yaw: true              # use EKF yaw (Point-LIO) for alignment, not magnetometer
+    wait_for_datum: false
