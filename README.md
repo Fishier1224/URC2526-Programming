@@ -19,7 +19,9 @@
 
 ## Overview
 
-This branch contains all code intended to run on the **NVIDIA Jetson** onboard computer of the rover. This includes perception, autonomy, communication with the base station, and integration with ROS 2.
+This branch contains all code intended to run on the **NVIDIA Jetson Orin Nano** onboard computer of the rover. This includes perception, autonomy, communication with the base station, and integration with ROS 2.
+
+This Github repository also contains all the code to run locally on your own computer.
 
 > **Note:** This is the `main` branch. For other subsystems, check the other branches in this repo.
 
@@ -27,8 +29,13 @@ This branch contains all code intended to run on the **NVIDIA Jetson** onboard c
 
 ## Hardware Requirements
 
-- All the sensors and actuators on the actual rover (GPS module, 2D Logitech Camera, Unitree L2 4D LiDAR, arm and claw and drive motors, Arduino Mega, Arduino Uno, and the MKR WAN (??)), NVIDIA Jetson Orin Nano (uses a 128gb microSD card; DO NOT lose this; in the event you fry the Jetson Orin Nano again can just reuse the card on a different Orin Nano), and a Windows OS laptop
-- The XBox Controller
+- All the sensors and actuators on the actual rover (GPS module, 2D Logitech Camera, Unitree L2 4D LiDAR, arm and claw and drive motors and controllers)
+- Arduino Mega (on rover)
+- Arduino Uno (on rover)
+- MKR WAN (one on rover, one USB conncted to your laptop)
+- NVIDIA Jetson Orin Nano (on rover; uses a 128gb microSD card; DO NOT lose this; in the event you fry the Jetson Orin Nano again can just reuse the card on a different Orin Nano)
+- Windows OS PC (the XBox Joystick controller is only compatible with these)
+- XBox Joystick Controller
 
 ---
 
@@ -73,10 +80,10 @@ source install/setup.bash
 ```
 URC2526-Programming/
 ├── ArduinoCode/
-│   ├── arduinoMegaCode.ino/        # Camera, object detection, ArUco tags
-│   ├── arduinoUnoCode.ino/          # Navigation, path planning
-│   ├── mkrwanReceiverRoverCode.ino/             # Base station communication
-│   └── mkrwanSenderComputerCode.ino/          # Motor control, sensors
+│   ├── arduinoMegaCode.ino/        # Code on the Arduino Mega
+│   ├── arduinoUnoCode.ino/         # Code on the Arduino Uno
+│   ├── mkrwanReceiverRoverCode.ino/   # Code on the MKR WAN on the rover
+│   └── mkrwanSenderComputerCode.ino/  # Code on the MKR WAN on your computer
 ├── ArmSim/                # this is kind of irrelevant
 ├── ArUcoTag/              # this is also kind of irrelevant
 ├── ComputerCode/          # Code to run on Windows OS laptop
@@ -91,24 +98,15 @@ URC2526-Programming/
 ## Running the Code from your Local Laptop
 ```bash
 cd ComputerCode
-
 ```
 
-### Launch everything
+## Running the Code on the Jetson Orin Nano
+There is a file in the Orin Nano's internals that runs the jetson_bridge.py code every 3 seconds (if it receives nothing, i.e. the mkr wan is not connected, the code quits and reruns after 3 seconds) as soon as the computer is powered on. As such, for now you don't need to run anything for teleopertation.
 
-```bash
-ros2 launch launch/rover_bringup.launch.py
-```
+If you would like to manually run the file, though, run the following:
 
-### Run individual nodes
 
-```bash
-# Perception
-ros2 run perception camera_node
-
-# Autonomy
-ros2 run autonomy nav_node
-```
+Additionally, ArUcoTag detection and 
 
 ---
 
